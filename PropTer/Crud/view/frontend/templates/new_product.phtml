@@ -1,0 +1,55 @@
+<?php
+/** @var \PropTer\Crud\Block\Template $block */
+?>
+
+<h1>New Product</h1>
+
+<div class="template">
+    <h1><?=$block->getName()?></h1>
+</div>
+
+<a href="<?= $block->getIndexUrl()?>"> Index </a>
+
+
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:30%}
+
+</style>
+
+<form action="<?= $block->getPostUrl() ?>" method="post">
+    <table border=1 cellspacing="10" cellpadding =0>
+        <tr><td>Name</td><td><input type="text" name="name" placeholder="Enter Name"></td></tr>
+        <tr><td>Brand</td><td><input type="text" name="brand" placeholder="Enter Brand"></td></tr>
+        <tr><td>Price</td><td><input type="text" name="price" placeholder="Enter Price"></td></tr>
+        <tr><td>Image</td><td><input type="file" name="image"></td></tr>
+        <tr><td><input type="submit" name="sm"></td><td><input type="reset"></td></tr>
+    </table>
+</form>
+
+
+<?php
+    if(isset($_POST['sm'])){
+    if(isset($_POST['name'])){
+        $name = $_POST['name'];
+        echo $name;
+    }
+
+    if(isset($_POST['brand'])){
+        $brand = $_POST['brand'];
+        echo $brand;
+    }
+
+    if(isset($_POST['price'])){
+        $price = $_POST['price'];
+        echo $price;
+    }
+
+    if(isset($_POST['image'])){
+        $image = $_POST['image'];
+        echo $image;
+    }
+}
+?>
